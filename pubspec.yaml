@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   percent_indicator: ^4.2.3 # مكتبة الحلقات الدائرية للماكروز
   google_fonts: ^8.1.0
+  animate_do: ^5.1.0
 
 dev_dependencies:
   flutter_test:

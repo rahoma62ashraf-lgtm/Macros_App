@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
@@ -17,11 +18,14 @@ class MealDetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // صورة الطبق
-              Image.network(
-                meal.imageUrl,
-                width: double.infinity,
-                height: 250,
-                fit: BoxFit.cover,
+              Hero(
+                tag: meal.id,
+                child: Image.network(
+                  meal.imageUrl,
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
               ),
 
               Padding(
@@ -29,16 +33,22 @@ class MealDetailsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      meal.title,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                    FadeInLeft(
+                      duration: const Duration(milliseconds: 750),
+                      child: Text(
+                        meal.title,
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    Text(
-                      meal.category,
-                      style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                    FadeInRight(
+                      duration: const Duration(milliseconds: 750),
+                      child: Text(
+                        meal.category,
+                        style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                      ),
                     ),
                     const Divider(height: 32),
 

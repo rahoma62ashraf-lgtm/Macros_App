@@ -16,6 +16,7 @@ class MacrosApp extends StatelessWidget {
       title: 'Macros App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: true,
         primarySwatch: Colors.green,
         // 2. احذفي سطر fontFamily القديم واكتبي هذا البديل للخط العربي:
         textTheme: GoogleFonts.cairoTextTheme(Theme.of(context).textTheme),
@@ -51,12 +52,35 @@ class _MainNavigationState extends State<MainNavigation> {
             _selectedIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
+            icon: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              transitionBuilder: (child, animation) {
+                return ScaleTransition(scale: animation, child: child);
+              },
+              child: Icon(
+                _selectedIndex == 0
+                    ? Icons.dashboard
+                    : Icons.dashboard_outlined,
+                key: ValueKey(_selectedIndex == 0),
+              ),
+            ),
             label: 'الرئيسية',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'استكشاف'),
+          BottomNavigationBarItem(
+            icon: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              transitionBuilder: (child, animation) {
+                return RotationTransition(turns: animation, child: child);
+              },
+              child: Icon(
+                _selectedIndex == 1 ? Icons.explore : Icons.explore_outlined,
+                key: ValueKey(_selectedIndex == 1),
+              ),
+            ),
+            label: 'استكشاف',
+          ),
         ],
       ),
     );
