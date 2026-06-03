@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // 1. أضيفي هذا السطر هنا في الأعلى
 import 'screens/home_screen.dart';
 import 'screens/explore_screen.dart';
 
@@ -16,7 +17,8 @@ class MacrosApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
-        fontFamily: 'Roboto', // أو أي خط عربي لو متاح، الافتراضي شغال تمام
+        // 2. احذفي سطر fontFamily القديم واكتبي هذا البديل للخط العربي:
+        textTheme: GoogleFonts.cairoTextTheme(Theme.of(context).textTheme),
       ),
       home: const MainNavigation(),
     );
