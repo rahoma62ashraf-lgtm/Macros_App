@@ -1,7 +1,7 @@
 class Meal {
   final String id;
   final String title;
-  final String category; // مصري أو سعودي
+  final String category;
   final String imageUrl;
   final int calories;
   final double protein;

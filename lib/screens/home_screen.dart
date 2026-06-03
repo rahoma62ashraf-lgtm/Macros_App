@@ -30,7 +30,6 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              // قسم الحلقات الدائرية للماكروز
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -130,9 +129,7 @@ class HomeScreen extends StatelessWidget {
         style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
       ),
       footer: Padding(
-        padding: const EdgeInsets.only(
-          top: 20,
-        ), // استبدل 20 بالمقاس الذي تريده,
+        padding: const EdgeInsets.only(top: 20),
         child: Text(
           subtitle,
           style: TextStyle(fontSize: 10, color: Colors.grey[600]),

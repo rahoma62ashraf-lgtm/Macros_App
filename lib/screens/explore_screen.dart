@@ -62,10 +62,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       label: Text(
                         category,
                         style: TextStyle(
-                          color: isSelected
-                              ? Colors.white
-                              : Colors
-                                    .black, // بيكون أبيض لو اخترتيه، وأسود لو مش مختاراه
+                          color: isSelected ? Colors.white : Colors.black,
                         ),
                       ),
                       selected: isSelected,
@@ -81,7 +78,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
               ),
               const SizedBox(height: 16),
 
-              // شبكة عرض الأطعمة (Grid)
               Expanded(
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
